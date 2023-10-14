@@ -23,12 +23,12 @@ classDiagram
         +existe: Boolean
         +relacao: Relacao
         +textos: TextoAssercao[]
+        +posAssercoes: String
     }
 
     class Relacao {
         +questiona: Boolean
         +texto: String
-        +posAssercoes: String
     }
 
     class TextoAssercao {
