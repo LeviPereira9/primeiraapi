@@ -14,20 +14,20 @@ classDiagram
 
     class TextoDeApoio {
         +numero: String
-        +img: Boolean
+        +temImagem: Boolean
         +texto: String
         +fonte: String
     }
 
     class EnunciadoAssercoes {
-        +existe: Boolean
+        +temAssercao: Boolean
         +relacao: Relacao
         +textos: TextoAssercao[]
         +posAssercoes: String
     }
 
     class Relacao {
-        +questiona: Boolean
+        +temRelacao: Boolean
         +texto: String
     }
 
@@ -37,7 +37,7 @@ classDiagram
     }
 
     class Opcoes {
-        +temImg: Boolean
+        +temImagem: Boolean
         +opcoes: Opcao[]
     }
 
