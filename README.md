@@ -22,7 +22,7 @@ classDiagram
     class EnunciadoAssercoes {
         +temAssercao: Boolean
         +relacao: Relacao
-        +textos: TextoAssercao[]
+        +textosAssercao: TextoAssercao[]
         +posAssercoes: String
     }
 
