@@ -1,0 +1,39 @@
+{
+  "Questao": {
+    "id": "",
+    "textosDeApoio": [
+      {
+        "numero": "",
+        "img": false,
+        "texto": "",
+        "fonte": ""
+      }
+    ],
+    "enunciado": "",
+    "enunciadoAssercoes": {
+      "existe": false,
+     
+      "relacao": {
+        "questiona": false,
+        "texto": "",
+        "posAssercoes": ""
+      },
+      "textos": [
+        {
+          "id": "",
+          "texto": ""
+        }
+      ]
+    },
+    "opcoes": {
+      "temImg": true,
+      "opcoes": [
+        {
+          "id": "",
+          "questao": ""
+        }
+      ]
+    },
+    "opcao_correta": ""
+  }
+}
