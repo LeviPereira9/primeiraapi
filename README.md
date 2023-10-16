@@ -32,7 +32,7 @@ classDiagram
     }
 
     class Assercao {
-        +id: String
+        +numero_romano: String
         +texto: String
     }
 
@@ -42,8 +42,8 @@ classDiagram
     }
 
     class Opcao {
-        +id: String
-        +questao: String
+        +letra: String
+        +texto: String
     }
 
     Questao -- TextoDeApoio
