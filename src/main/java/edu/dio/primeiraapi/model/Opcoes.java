@@ -22,4 +22,28 @@ public class Opcoes {
     @OneToOne
     @JoinColumn(name = "questao_id")
     private Questao questao;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public boolean isTemImagem() {
+        return temImagem;
+    }
+
+    public void setTemImagem(boolean temImagem) {
+        this.temImagem = temImagem;
+    }
+
+    public List<Opcao> getOpcoes() {
+        return opcoes;
+    }
+
+    public void setOpcoes(List<Opcao> opcoes) {
+        this.opcoes = opcoes;
+    }
 }

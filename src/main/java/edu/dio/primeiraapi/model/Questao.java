@@ -23,4 +23,51 @@ public class Questao {
     @OneToOne(mappedBy = "questao")
     private Opcoes opcoes;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getEnunciado() {
+        return enunciado;
+    }
+
+    public void setEnunciado(String enunciado) {
+        this.enunciado = enunciado;
+    }
+
+    public String getOpcao__correta() {
+        return opcao__correta;
+    }
+
+    public void setOpcao__correta(String opcao__correta) {
+        this.opcao__correta = opcao__correta;
+    }
+
+    public List<TextoDeApoio> getTextosDeApoio() {
+        return textosDeApoio;
+    }
+
+    public void setTextosDeApoio(List<TextoDeApoio> textosDeApoio) {
+        this.textosDeApoio = textosDeApoio;
+    }
+
+    public EnunciadoAssercoes getEnunciadoAssercoes() {
+        return enunciadoAssercoes;
+    }
+
+    public void setEnunciadoAssercoes(EnunciadoAssercoes enunciadoAssercoes) {
+        this.enunciadoAssercoes = enunciadoAssercoes;
+    }
+
+    public Opcoes getOpcoes() {
+        return opcoes;
+    }
+
+    public void setOpcoes(Opcoes opcoes) {
+        this.opcoes = opcoes;
+    }
 }

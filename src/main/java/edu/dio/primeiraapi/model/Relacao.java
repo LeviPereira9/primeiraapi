@@ -21,8 +21,12 @@ public class Relacao {
     @JoinColumn(name = "enunciadoAssercoes_id")
     private EnunciadoAssercoes enunciadoAssercoes;
 
-    public String getTexto() {
-        return texto;
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public boolean isTemRelacao() {
@@ -31,6 +35,10 @@ public class Relacao {
 
     public void setTemRelacao(boolean temRelacao) {
         this.temRelacao = temRelacao;
+    }
+
+    public String getTexto() {
+        return texto;
     }
 
     public void setTexto(String texto) {

@@ -2,10 +2,6 @@ package edu.dio.primeiraapi.model;
 
 import java.util.List;
 
-import com.fasterxml.jackson.annotation.JsonSubTypes.Type;
-
-import jakarta.annotation.Generated;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -34,6 +30,10 @@ public class EnunciadoAssercoes {
         return id;
     }
 
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public boolean isTemAssercao() {
         return temAssercao;
     }
@@ -42,12 +42,28 @@ public class EnunciadoAssercoes {
         this.temAssercao = temAssercao;
     }
 
+    public List<Assercao> getAssercoes() {
+        return assercoes;
+    }
+
+    public void setAssercoes(List<Assercao> assercoes) {
+        this.assercoes = assercoes;
+    }
+
     public String getPosAssercoes() {
         return posAssercoes;
     }
 
     public void setPosAssercoes(String posAssercoes) {
         this.posAssercoes = posAssercoes;
+    }
+
+    public Relacao getRelacao() {
+        return relacao;
+    }
+
+    public void setRelacao(Relacao relacao) {
+        this.relacao = relacao;
     }
 
 }

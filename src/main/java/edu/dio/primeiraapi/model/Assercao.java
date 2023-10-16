@@ -22,4 +22,27 @@ public class Assercao {
     private EnunciadoAssercoes enunciadoAssercoes;
 
     // Getters e Setters
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNumero_romano() {
+        return numero_romano;
+    }
+
+    public void setNumero_romano(String numero_romano) {
+        this.numero_romano = numero_romano;
+    }
+
+    public String getTexto() {
+        return texto;
+    }
+
+    public void setTexto(String texto) {
+        this.texto = texto;
+    }
 }
