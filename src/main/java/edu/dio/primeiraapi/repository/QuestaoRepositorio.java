@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import edu.dio.primeiraapi.model.Questao;
 
 @Repository
-public interface QuestaoRepositorio extends JpaRepository<Questao, Integer> {
+public interface QuestaoRepositorio extends JpaRepository<Questao, Long> {
 
 }

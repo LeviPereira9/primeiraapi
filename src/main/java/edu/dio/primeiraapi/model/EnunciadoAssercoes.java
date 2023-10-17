@@ -14,23 +14,20 @@ import jakarta.persistence.OneToOne;
 public class EnunciadoAssercoes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private boolean temAssercao;
     private String posAssercoes;
     @OneToMany(mappedBy = "enunciadoAssercoes")
     private List<Assercao> assercoes;
-    @OneToOne(mappedBy = "enunciadoAssercoes")
+    @OneToOne()
+    @JoinColumn(name = "relacao_id")
     private Relacao relacao;
 
-    @OneToOne
-    @JoinColumn(name = "questao_id")
-    private Questao questao;
-
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

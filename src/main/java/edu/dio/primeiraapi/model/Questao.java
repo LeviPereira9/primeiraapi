@@ -6,6 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
@@ -13,21 +14,23 @@ import jakarta.persistence.OneToOne;
 public class Questao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
     private String enunciado;
     private String opcao__correta;
     @OneToMany(mappedBy = "questao")
     private List<TextoDeApoio> textosDeApoio;
-    @OneToOne(mappedBy = "questao")
+    @OneToOne
+    @JoinColumn(name = "enunciadoassercoes_id")
     private EnunciadoAssercoes enunciadoAssercoes;
-    @OneToOne(mappedBy = "questao")
+    @OneToOne
+    @JoinColumn(name = "opcoes_id")
     private Opcoes opcoes;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -70,4 +73,17 @@ public class Questao {
     public void setOpcoes(Opcoes opcoes) {
         this.opcoes = opcoes;
     }
+
+    @Override
+    public String toString() {
+        return "Questao{" +
+                "id=" + id +
+                ", enunciado='" + enunciado + '\'' +
+                ", opcao_correta='" + opcao__correta + '\'' +
+                ", textosDeApoio=" + textosDeApoio +
+                ", enunciadoAssercoes=" + enunciadoAssercoes +
+                ", opcoes=" + opcoes +
+                '}';
+    }
+
 }

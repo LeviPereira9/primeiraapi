@@ -7,7 +7,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -16,7 +15,6 @@ import edu.dio.primeiraapi.service.UserService;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 
 @RestController
-@RequestMapping("/questoes")
 public class QuestaoController {
 
     private final UserService userService;
@@ -25,8 +23,8 @@ public class QuestaoController {
         this.userService = userService;
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Questao> findById(@PathVariable Integer id) {
+    @GetMapping("/questao/{id}")
+    public ResponseEntity<Questao> findById(@PathVariable Long id) {
         var questao = userService.findById(id);
 
         return ResponseEntity.ok(questao);
