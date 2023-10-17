@@ -14,42 +14,42 @@ classDiagram
 
     class TextoDeApoio {
         +numero: String
-        +img: Boolean
+        +temImagem: Boolean
         +texto: String
         +fonte: String
     }
 
     class EnunciadoAssercoes {
-        +existe: Boolean
+        +temAssercao: Boolean
         +relacao: Relacao
-        +textos: TextoAssercao[]
-    }
-
-    class Relacao {
-        +questiona: Boolean
-        +texto: String
+        +assercoes: Assercao[]
         +posAssercoes: String
     }
 
-    class TextoAssercao {
-        +id: String
+    class Relacao {
+        +temRelacao: Boolean
+        +texto: String
+    }
+
+    class Assercao {
+        +numero_romano: String
         +texto: String
     }
 
     class Opcoes {
-        +temImg: Boolean
+        +temImagem: Boolean
         +opcoes: Opcao[]
     }
 
     class Opcao {
-        +id: String
-        +questao: String
+        +letra: String
+        +texto: String
     }
 
     Questao -- TextoDeApoio
     Questao -- EnunciadoAssercoes
     Questao -- Opcoes
     Opcoes -- Opcao
-    EnunciadoAssercoes -- TextoAssercao
+    EnunciadoAssercoes -- Assercao
     EnunciadoAssercoes -- Relacao
 ```
