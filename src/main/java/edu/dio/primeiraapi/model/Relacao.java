@@ -4,6 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 
 @Entity(name = "tb_relacao")
 public class Relacao {
@@ -12,6 +15,10 @@ public class Relacao {
     private Long id;
     private boolean temRelacao;
     private String texto;
+
+    @OneToOne
+    @JoinColumn(name = "enunciadoassercoes_id")
+    private EnunciadoAssercoes enunciadoAssercoes_relacao;
 
     public Long getId() {
         return id;

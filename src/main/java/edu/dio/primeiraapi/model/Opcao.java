@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 
 @Entity(name = "tb_opcao")
@@ -15,9 +16,9 @@ public class Opcao {
     private String letra;
     private String texto;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "opcoes_id")
-    private Opcoes opcoes;
+    private Opcoes opcoes_opcao;
 
     public Long getId() {
         return id;

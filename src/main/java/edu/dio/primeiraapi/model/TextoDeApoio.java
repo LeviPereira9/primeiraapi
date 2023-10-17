@@ -19,7 +19,7 @@ public class TextoDeApoio {
 
     @ManyToOne
     @JoinColumn(name = "questao_id")
-    private Questao questao;
+    private Questao questao_textoDeApoio;
 
     public Long getId() {
         return id;
@@ -59,5 +59,13 @@ public class TextoDeApoio {
 
     public void setFonte(String fonte) {
         this.fonte = fonte;
+    }
+
+    public void setQuestao_textoDeApoio(Questao questao_textoDeApoio) {
+        this.questao_textoDeApoio = questao_textoDeApoio;
+    }
+
+    public Questao getQuestao_textoDeApoio() {
+        return questao_textoDeApoio;
     }
 }

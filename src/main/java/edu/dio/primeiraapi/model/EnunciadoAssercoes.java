@@ -3,6 +3,7 @@ package edu.dio.primeiraapi.model;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -17,11 +18,14 @@ public class EnunciadoAssercoes {
     private Long id;
     private boolean temAssercao;
     private String posAssercoes;
-    @OneToMany(mappedBy = "enunciadoAssercoes")
+    @OneToMany(mappedBy = "enunciadoAssercoes_assercao")
     private List<Assercao> assercoes;
-    @OneToOne()
-    @JoinColumn(name = "relacao_id")
+    @OneToOne(mappedBy = "enunciadoAssercoes_relacao")
     private Relacao relacao;
+
+    @OneToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "questao_id")
+    private Questao questao_assercoes;
 
     public Long getId() {
         return id;
@@ -61,6 +65,14 @@ public class EnunciadoAssercoes {
 
     public void setRelacao(Relacao relacao) {
         this.relacao = relacao;
+    }
+
+    public void setQuestao_assercoes(Questao questao_assercoes) {
+        this.questao_assercoes = questao_assercoes;
+    }
+
+    public Questao getQuestao_assercoes() {
+        return questao_assercoes;
     }
 
 }

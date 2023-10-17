@@ -17,13 +17,11 @@ public class Questao {
     private Long id;
     private String enunciado;
     private String opcao__correta;
-    @OneToMany(mappedBy = "questao")
+    @OneToMany(mappedBy = "questao_textoDeApoio")
     private List<TextoDeApoio> textosDeApoio;
-    @OneToOne
-    @JoinColumn(name = "enunciadoassercoes_id")
+    @OneToOne(mappedBy = "questao_assercoes")
     private EnunciadoAssercoes enunciadoAssercoes;
-    @OneToOne
-    @JoinColumn(name = "opcoes_id")
+    @OneToOne(mappedBy = "questao_opcoes")
     private Opcoes opcoes;
 
     public Long getId() {
