@@ -4,7 +4,7 @@ Desafio de primeira API da DIO.
 ```mermaid
 classDiagram
     class Questao {
-        +id: String
+        +id: Long
         +textosDeApoio: TextoDeApoio[]
         +enunciado: String
         +enunciadoAssercoes: EnunciadoAssercoes
@@ -13,6 +13,7 @@ classDiagram
     }
 
     class TextoDeApoio {
+        +id: Long
         +numero: String
         +temImagem: Boolean
         +texto: String
@@ -20,6 +21,7 @@ classDiagram
     }
 
     class EnunciadoAssercoes {
+        +id: Long
         +temAssercao: Boolean
         +relacao: Relacao
         +assercoes: Assercao[]
@@ -27,21 +29,25 @@ classDiagram
     }
 
     class Relacao {
+        +id: Long
         +temRelacao: Boolean
         +texto: String
     }
 
     class Assercao {
+        +id: Long
         +numero_romano: String
         +texto: String
     }
 
     class Opcoes {
+        +id: Long
         +temImagem: Boolean
         +opcoes: Opcao[]
     }
 
     class Opcao {
+        +id: Long
         +letra: String
         +texto: String
     }
