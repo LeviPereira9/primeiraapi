@@ -4,8 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 
 @Entity(name = "tb_assercao")
 public class Assercao {
@@ -14,10 +12,6 @@ public class Assercao {
     private Long id;
     private String numero_romano;
     private String texto;
-
-    @OneToOne
-    @JoinColumn(name = "enunciadoassercoes_id")
-    private EnunciadoAssercoes enunciadoAssercoes_assercao;
 
     // Getters e Setters
     public Long getId() {

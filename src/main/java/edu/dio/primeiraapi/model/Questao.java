@@ -2,7 +2,9 @@ package edu.dio.primeiraapi.model;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,11 +18,11 @@ public class Questao {
     private Long id;
     private String enunciado;
     private String opcao__correta;
-    @OneToMany(mappedBy = "questao_textoDeApoio")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<TextoDeApoio> textosDeApoio;
-    @OneToOne(mappedBy = "questao_assercoes")
+    @OneToOne(cascade = CascadeType.ALL)
     private EnunciadoAssercoes enunciadoAssercoes;
-    @OneToOne(mappedBy = "questao_opcoes")
+    @OneToOne(cascade = CascadeType.ALL)
     private Opcoes opcoes;
 
     public Long getId() {

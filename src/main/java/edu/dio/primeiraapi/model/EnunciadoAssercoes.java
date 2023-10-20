@@ -2,12 +2,12 @@ package edu.dio.primeiraapi.model;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
@@ -18,14 +18,10 @@ public class EnunciadoAssercoes {
     private Long id;
     private boolean temAssercao;
     private String posAssercoes;
-    @OneToMany(mappedBy = "enunciadoAssercoes_assercao")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Assercao> assercoes;
-    @OneToOne(mappedBy = "enunciadoAssercoes_relacao")
+    @OneToOne(cascade = CascadeType.ALL)
     private Relacao relacao;
-
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "questao_id")
-    private Questao questao_assercoes;
 
     public Long getId() {
         return id;
@@ -65,14 +61,6 @@ public class EnunciadoAssercoes {
 
     public void setRelacao(Relacao relacao) {
         this.relacao = relacao;
-    }
-
-    public void setQuestao_assercoes(Questao questao_assercoes) {
-        this.questao_assercoes = questao_assercoes;
-    }
-
-    public Questao getQuestao_assercoes() {
-        return questao_assercoes;
     }
 
 }

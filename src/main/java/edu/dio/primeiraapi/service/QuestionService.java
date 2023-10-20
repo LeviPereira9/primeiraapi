@@ -4,14 +4,9 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
-import edu.dio.primeiraapi.model.EnunciadoAssercoes;
-import edu.dio.primeiraapi.model.Opcao;
-import edu.dio.primeiraapi.model.Opcoes;
 import edu.dio.primeiraapi.model.Questao;
-import edu.dio.primeiraapi.model.TextoDeApoio;
 import edu.dio.primeiraapi.repository.QuestaoRepositorio;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 

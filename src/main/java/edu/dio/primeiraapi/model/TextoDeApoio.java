@@ -4,8 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 
 @Entity(name = "tb_textoDeApoio")
 public class TextoDeApoio {
@@ -16,10 +14,6 @@ public class TextoDeApoio {
     private boolean temImagem;
     private String texto;
     private String fonte;
-
-    @ManyToOne
-    @JoinColumn(name = "questao_id")
-    private Questao questao_textoDeApoio;
 
     public Long getId() {
         return id;
@@ -61,11 +55,4 @@ public class TextoDeApoio {
         this.fonte = fonte;
     }
 
-    public void setQuestao_textoDeApoio(Questao questao_textoDeApoio) {
-        this.questao_textoDeApoio = questao_textoDeApoio;
-    }
-
-    public Questao getQuestao_textoDeApoio() {
-        return questao_textoDeApoio;
-    }
 }
