@@ -18,28 +18,30 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 @RestController
 public class QuestaoController {
 
-    @Autowired
-    private QuestionService questionService;
-
-    @GetMapping("/questao/{id}")
-    public ResponseEntity<Questao> findById(@PathVariable Long id) {
-        var questao = questionService.findById(id);
-
-        return ResponseEntity.ok(questao);
-    }
-
-    @GetMapping("/questoes")
-    public ResponseEntity<List<Questao>> findAll() {
-        List<Questao> questao = questionService.findAll();
-
-        return ResponseEntity.ok(questao);
-    }
-
-    @PostMapping
-    public ResponseEntity<Questao> create(@RequestBody Questao questao) {
-        var questaoCriada = questionService.createQuestion(questao);
-        URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-                .buildAndExpand(questaoCriada.getId()).toUri();
-        return ResponseEntity.created(location).body(questaoCriada);
-    }
+    /*
+     * @Autowired
+     * private QuestionService questionService;
+     * 
+     * @GetMapping("/questao/{id}")
+     * public ResponseEntity<Questao> findById(@PathVariable Long id) {
+     * var questao = questionService.findById(id);
+     * 
+     * return ResponseEntity.ok(questao);
+     * }
+     * 
+     * @GetMapping("/questoes")
+     * public ResponseEntity<List<Questao>> findAll() {
+     * List<Questao> questao = questionService.findAll();
+     * 
+     * return ResponseEntity.ok(questao);
+     * }
+     * 
+     * @PostMapping
+     * public ResponseEntity<Questao> create(@RequestBody Questao questao) {
+     * var questaoCriada = questionService.createQuestion(questao);
+     * URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
+     * .buildAndExpand(questaoCriada.getId()).toUri();
+     * return ResponseEntity.created(location).body(questaoCriada);
+     * }
+     */
 }
