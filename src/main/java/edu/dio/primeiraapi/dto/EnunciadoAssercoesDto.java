@@ -17,8 +17,8 @@ public record EnunciadoAssercoesDto(Long id, boolean temAssercao, String posAsse
                                 model.isTemAssercao(),
                                 model.getPosAssercoes(),
                                 ofNullable(model.getAssercoes()).orElse(emptyList()).stream()
-                                                .map((assercao) -> new AssercaoDto(assercao)).collect(toList()),
-                                ofNullable(model.getRelacao()).map((relacao) -> new RelacaoDto(relacao)).orElse(null));
+                                                .map(AssercaoDto::new).collect(toList()),
+                                ofNullable(model.getRelacao()).map(RelacaoDto::new).orElse(null));
         }
 
         public EnunciadoAssercoes toModel() {
@@ -28,8 +28,8 @@ public record EnunciadoAssercoesDto(Long id, boolean temAssercao, String posAsse
                 model.setTemAssercao(this.temAssercao);
                 model.setPosAssercoes(this.posAssercoes);
                 model.setAssercoes(ofNullable(this.assercoes).orElse(emptyList()).stream()
-                                .map((assercaoDto) -> assercaoDto.toModel()).collect(toList()));
-                model.setRelacao(ofNullable(this.relacao).map((relacaoDto) -> relacaoDto.toModel()).orElse(null));
+                                .map(AssercaoDto::toModel).collect(toList()));
+                model.setRelacao(ofNullable(this.relacao).map(RelacaoDto::toModel).orElse(null));
 
                 return model;
         }

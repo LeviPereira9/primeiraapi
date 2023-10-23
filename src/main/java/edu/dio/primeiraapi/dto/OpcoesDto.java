@@ -1,7 +1,6 @@
 package edu.dio.primeiraapi.dto;
 
 import java.util.List;
-
 import edu.dio.primeiraapi.model.Opcoes;
 
 import static java.util.Collections.emptyList;
@@ -12,8 +11,7 @@ public record OpcoesDto(Long id, boolean temImagem, List<OpcaoDto> opcoes) {
 
     public OpcoesDto(Opcoes model) {
         this(model.getId(), model.isTemImagem(),
-                ofNullable(model.getOpcoes()).orElse(emptyList()).stream().map((opcao) -> new OpcaoDto(opcao))
-                        .collect(toList()));
+                ofNullable(model.getOpcoes()).orElse(emptyList()).stream().map(OpcaoDto::new).collect(toList()));
     }
 
     public Opcoes toModel() {
@@ -21,7 +19,7 @@ public record OpcoesDto(Long id, boolean temImagem, List<OpcaoDto> opcoes) {
 
         model.setId(this.id);
         model.setTemImagem(this.temImagem);
-        model.setOpcoes(ofNullable(this.opcoes).orElse(emptyList()).stream().map((opcaoDto) -> opcaoDto.toModel())
+        model.setOpcoes(ofNullable(this.opcoes).orElse(emptyList()).stream().map(OpcaoDto::toModel)
                 .collect(toList()));
 
         return model;
