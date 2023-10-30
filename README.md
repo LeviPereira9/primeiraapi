@@ -4,58 +4,49 @@ Desafio de primeira API da DIO.
 ```mermaid
 classDiagram
     class Questao {
-        +id: Long
-        +textosDeApoio: TextoDeApoio[]
+        +numeroDaQuestao: String
+        +anulada: Boolean
+        +temAssercoes: Boolean
         +enunciado: String
-        +enunciadoAssercoes: EnunciadoAssercoes
-        +opcoes: Opcoes
-        +opcao_correta: String
+        +opcaoCorreta: String
+        +textosDeApoioDto: TextoDeApoio[]
+        +respostasDto: Respostas
+        +enunciadoAssercoesDto: EnunciadoAssercoes
     }
 
     class TextoDeApoio {
-        +id: Long
-        +numero: String
+        +numero: Number
         +temImagem: Boolean
         +texto: String
         +fonte: String
     }
 
-    class EnunciadoAssercoes {
-        +id: Long
-        +temAssercao: Boolean
-        +relacao: Relacao
-        +assercoes: Assercao[]
-        +posAssercoes: String
-    }
-
-    class Relacao {
-        +id: Long
-        +temRelacao: Boolean
-        +texto: String
-    }
-
-    class Assercao {
-        +id: Long
-        +numero_romano: String
-        +texto: String
-    }
-
-    class Opcoes {
-        +id: Long
+    class Respostas {
         +temImagem: Boolean
-        +opcoes: Opcao[]
+        +opcoesDto: Opcao[]
     }
 
     class Opcao {
-        +id: Long
         +letra: String
+        +texto: String
+    }
+
+    class EnunciadoAssercoes {
+        +temRelacao: Boolean
+        +textoRelacao: String
+        +posAssercoes: String
+        +assercoes: Assercao[]
+    }
+
+    class Assercao {
+        +numeroRomano: String
         +texto: String
     }
 
     Questao -- TextoDeApoio
     Questao -- EnunciadoAssercoes
-    Questao -- Opcoes
-    Opcoes -- Opcao
+    Questao -- Respostas
+    Respostas -- Opcao
     EnunciadoAssercoes -- Assercao
-    EnunciadoAssercoes -- Relacao
+
 ```
